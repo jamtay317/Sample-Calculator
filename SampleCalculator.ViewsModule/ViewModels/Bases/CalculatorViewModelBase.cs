@@ -24,6 +24,8 @@ namespace SampleCalculator.ViewsModule.ViewModels.Bases
         public DelegateCommand EqualsCommand { get; set; }
 
         protected abstract string NumberFormat { get; }
+        public abstract int Height { get; set; }
+        public abstract int Width { get; set; }
         
         protected ICalculator Calculator { get; private set; }
 

@@ -9,7 +9,7 @@
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
-        Title="{Binding Title}" Height="450" Width="800">
+        Title="{Binding Title}" Height="{Binding ViewModel.Height, Mode=TwoWay}" Width="{Binding ViewModel.Width, Mode=TwoWay}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -22,9 +22,16 @@
         
         <Button fa:Awesome.Content="Bars"
                     Style="{StaticResource FaButtonStyle}"
+                Margin="5"
                       TextElement.FontFamily="pack://application:,,,/FontAwesome.WPF;component/#FontAwesome"></Button>
 
-        <TextBlock Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Right" Text="{Binding ViewModel.Expression}"></TextBlock>
+        <TextBlock Grid.Column="1"
+                   Grid.Row="0" 
+                   VerticalAlignment="Center" 
+                   HorizontalAlignment="Right" 
+                   Margin="40"
+                   FontWeight="Bold"
+                   Text="{Binding ViewModel.Expression}"></TextBlock>
 
         <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding ViewModel}"></ContentControl>
     </Grid>

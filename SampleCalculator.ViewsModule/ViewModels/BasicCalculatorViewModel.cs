@@ -10,5 +10,7 @@ namespace SampleCalculator.ViewsModule.ViewModels
         }
 
         protected override string NumberFormat => "N2";
+        public override int Height { get; set; } = 400;
+        public override int Width { get; set; } = 300;
     }
 }
