@@ -1,6 +1,7 @@
 ﻿using System;
 using Prism.Commands;
 using SampleCalculator.Core.Calculators;
+using SampleCalculator.Core.Expressions;
 
 namespace SampleCalculator.ViewsModule.ViewModels.Bases
 {
@@ -13,11 +14,15 @@ namespace SampleCalculator.ViewsModule.ViewModels.Bases
             Calculator = calculator;
         }
 
-        private string _expression;
-        public string Expression
+        private Expression _expression;
+        public Expression Expression
         {
             get => _expression;
-            set => SetProperty(ref _expression, value);
+            set
+            {
+                _expression = value;
+                RaisePropertyChanged();
+            }
         }
 
         public DelegateCommand<string> ButtonPushedCommand { get; set; }

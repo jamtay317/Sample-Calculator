@@ -1,12 +1,14 @@
 ﻿using System;
+using SampleCalculator.Core.Expressions;
 
 namespace SampleCalculator.Core.Calculators
 {
-    public class ScientificCalculator:ICalculator
+    public class ScientificCalculator:BasicCalculator
     {
-        public double Evaluate(string expression)
+        
+        public override double Evaluate(Expression expression)
         {
-            throw new NotImplementedException();
+            return base.Evaluate(expression);
         }
     }
 }

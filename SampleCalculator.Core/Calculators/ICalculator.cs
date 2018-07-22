@@ -1,7 +1,9 @@
-﻿namespace SampleCalculator.Core.Calculators
+﻿using SampleCalculator.Core.Expressions;
+
+namespace SampleCalculator.Core.Calculators
 {
     public interface ICalculator
     {
-        double Evaluate(string expression);
+        double Evaluate(Expression expression);
     }
 }

@@ -75,6 +75,7 @@
     <Compile Include="ContainerHelpers\ContainerHelper.cs" />
     <Compile Include="ContainerHelpers\IContainerHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Expressions\Expression.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

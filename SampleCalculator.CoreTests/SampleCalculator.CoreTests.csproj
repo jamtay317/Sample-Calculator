@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Calculators\BasicCalculatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structs\ExpressionTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

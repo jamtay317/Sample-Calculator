@@ -1,10 +1,11 @@
 ﻿using Prism.Commands;
+using SampleCalculator.Core.Expressions;
 
 namespace SampleCalculator.ViewsModule.ViewModels.Bases
 {
     public interface ICalculatorViewModelBase
     {
-        string Expression { get; }
+        Expression Expression { get; }
 
         DelegateCommand<string> ButtonPushedCommand { get; set; }
 
