@@ -1,4 +1,6 @@
 ﻿using Microsoft.Practices.Unity;
+using SampleCalculator.Core.ContainerHelpers;
+using SampleCalculator.ViewsModule.ViewModels.Factories;
 
 namespace SampleCalculator.Ui
 {
@@ -6,6 +8,8 @@ namespace SampleCalculator.Ui
     {
         public static IUnityContainer RegisterSingletons(this IUnityContainer container)
         {
+            container.RegisterType<IContainerHelper, ContainerHelper>();
+            container.RegisterType<ICalculatorViewModelFactory, CalculatorViewModelFactory>();
             return container;
         }
 

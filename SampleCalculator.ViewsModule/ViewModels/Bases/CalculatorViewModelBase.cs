@@ -4,7 +4,7 @@ using SampleCalculator.Core.Calculators;
 
 namespace SampleCalculator.ViewsModule.ViewModels.Bases
 {
-    public abstract class CalculatorViewModelBase:ViewModelBase
+    public abstract class CalculatorViewModelBase:ViewModelBase, ICalculatorViewModelBase
     {
         private bool _shouldResetExpression;
 

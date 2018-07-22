@@ -80,8 +80,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ViewModels\Bases\CalculatorViewModelBase.cs" />
+    <Compile Include="ViewModels\Bases\ICalculatorViewModelBase.cs" />
     <Compile Include="ViewModels\Bases\ViewModelBase.cs" />
     <Compile Include="ViewModels\BasicCalculatorViewModel.cs" />
+    <Compile Include="ViewModels\Factories\CalculatorViewModelFactory.cs" />
+    <Compile Include="ViewModels\Factories\ICalculatorViewModelFactory.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -5,6 +5,7 @@ namespace SampleCalculator.ViewsModule.ViewModels
 {
     public class BasicCalculatorViewModel:CalculatorViewModelBase
     {
+
         public BasicCalculatorViewModel() : base(new BasicCalculator())
         {
         }
