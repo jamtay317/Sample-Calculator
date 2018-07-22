@@ -85,6 +85,7 @@
     <Compile Include="ViewModels\BasicCalculatorViewModel.cs" />
     <Compile Include="ViewModels\Factories\CalculatorViewModelFactory.cs" />
     <Compile Include="ViewModels\Factories\ICalculatorViewModelFactory.cs" />
+    <Compile Include="ViewModels\ScientificCalculatorViewModel.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -105,6 +106,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\BasicCalculator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ScientificCalculator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

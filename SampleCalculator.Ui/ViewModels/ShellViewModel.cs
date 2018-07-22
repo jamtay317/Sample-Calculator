@@ -1,5 +1,7 @@
-﻿using Prism.Commands;
+﻿using System.Linq;
+using Prism.Commands;
 using Prism.Mvvm;
+using SampleCalculator.Core.Constants;
 using SampleCalculator.Ui.Models;
 using SampleCalculator.ViewsModule.ViewModels.Bases;
 using SampleCalculator.ViewsModule.ViewModels.Factories;
@@ -14,6 +16,7 @@ namespace SampleCalculator.Ui.ViewModels
         {
             _calculatorViewModelFactory = calculatorViewModelFactory;
             ViewModel = _calculatorViewModelFactory.GetCalculatorViewModel();
+            SelectedViewModel = Core.Constants.ViewModels.All.First(x => x.DisplayName == "Basic");
         }
 
         private string _title = "Awesome Calculator";
@@ -30,13 +33,27 @@ namespace SampleCalculator.Ui.ViewModels
             set => SetProperty(ref _viewModel, value);
         }
 
+        private ViewModel _selectedViewModel;
+        public ViewModel SelectedViewModel
+        {
+            get => _selectedViewModel;
+            set => SetProperty(ref _selectedViewModel, value);
+        }
+
         public Flyouts Flyouts { get; set; } = new Flyouts();
 
         public DelegateCommand OpenLeftFlyoutCommand { get; set; }
+        public DelegateCommand ViewModelChangedCommand { get; set; }
 
         public override void RegisterCommands()
         {
             OpenLeftFlyoutCommand = new DelegateCommand(OpenLeftFlyoutExecute);
+            ViewModelChangedCommand = new DelegateCommand(ViewModelChangedExecute);
+        }
+
+        private void ViewModelChangedExecute()
+        {
+            ViewModel = _calculatorViewModelFactory.GetCalculatorViewModel(SelectedViewModel.ViewModelName);
         }
 
         private void OpenLeftFlyoutExecute()

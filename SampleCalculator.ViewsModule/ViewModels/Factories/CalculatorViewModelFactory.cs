@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using SampleCalculator.Core.ContainerHelpers;
 using SampleCalculator.ViewsModule.ViewModels.Bases;
@@ -24,7 +25,7 @@ namespace SampleCalculator.ViewsModule.ViewModels.Factories
             ICalculatorViewModelBase calculatorViewModel = null;
             if (!_calculatorViewModels.ContainsKey(calculatorName))
             {
-                var type = Assembly.GetExecutingAssembly().GetType($"{calculatorName}CalculatorViewModel");
+                var type = Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(x=>x.Name == $"{calculatorName}CalculatorViewModel");
 
                 if (_containerHelper.Resolve(type) is ICalculatorViewModelBase viewModel)
                 {

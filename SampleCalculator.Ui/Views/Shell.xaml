@@ -7,7 +7,9 @@
         xmlns:prism="http://prismlibrary.com/"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:constants="clr-namespace:SampleCalculator.Core.Constants;assembly=SampleCalculator.Core"
         prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Title="{Binding Title}" Height="{Binding ViewModel.Height, Mode=TwoWay}" Width="{Binding ViewModel.Width, Mode=TwoWay}">
     <Grid>
@@ -37,9 +39,12 @@
         <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding ViewModel}"></ContentControl>
 
         <mah:Flyout  Width="200" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2" Position="Left" IsOpen="{Binding Flyouts.LeftIsOpen}">
-            <ListBox>
-                <ListBoxItem>Hello</ListBoxItem>
-                <ListBoxItem>World</ListBoxItem>
+            <ListBox ItemsSource="{x:Static constants:ViewModels.All}" SelectedItem="{Binding SelectedViewModel}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding ViewModelChangedCommand}" ></i:InvokeCommandAction>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
             </ListBox>
         </mah:Flyout>
     </Grid>

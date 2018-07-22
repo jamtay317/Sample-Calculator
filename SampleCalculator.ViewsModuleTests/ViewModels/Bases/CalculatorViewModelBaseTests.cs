@@ -71,5 +71,7 @@ namespace SampleCalculator.ViewsModuleTests.ViewModels.Bases
         }
         //Test class to test abstract class
         protected override string NumberFormat => "N1";
+        public override int Height { get; set; } = 500;
+        public override int Width { get; set; } = 500;
     }
 }

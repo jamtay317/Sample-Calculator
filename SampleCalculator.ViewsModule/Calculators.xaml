@@ -3,5 +3,6 @@
     
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Views/BasicCalculator.xaml"></ResourceDictionary>
+        <ResourceDictionary Source="Views/ScientificCalculator.xaml"></ResourceDictionary>
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
