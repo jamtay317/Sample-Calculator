@@ -22,8 +22,9 @@
         
         <Button fa:Awesome.Content="Bars"
                     Style="{StaticResource FaButtonStyle}"
-                Margin="5"
-                      TextElement.FontFamily="pack://application:,,,/FontAwesome.WPF;component/#FontAwesome"></Button>
+                    Margin="5"
+                    Command="{Binding OpenLeftFlyoutCommand}"
+                    TextElement.FontFamily="pack://application:,,,/FontAwesome.WPF;component/#FontAwesome"></Button>
 
         <TextBlock Grid.Column="1"
                    Grid.Row="0" 
@@ -34,6 +35,13 @@
                    Text="{Binding ViewModel.Expression}"></TextBlock>
 
         <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding ViewModel}"></ContentControl>
+
+        <mah:Flyout  Width="200" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2" Position="Left" IsOpen="{Binding Flyouts.LeftIsOpen}">
+            <ListBox>
+                <ListBoxItem>Hello</ListBoxItem>
+                <ListBoxItem>World</ListBoxItem>
+            </ListBox>
+        </mah:Flyout>
     </Grid>
 </mah:MetroWindow>
 

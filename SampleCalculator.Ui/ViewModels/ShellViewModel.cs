@@ -1,10 +1,12 @@
-﻿using Prism.Mvvm;
+﻿using Prism.Commands;
+using Prism.Mvvm;
+using SampleCalculator.Ui.Models;
 using SampleCalculator.ViewsModule.ViewModels.Bases;
 using SampleCalculator.ViewsModule.ViewModels.Factories;
 
 namespace SampleCalculator.Ui.ViewModels
 {
-    public class ShellViewModel:BindableBase
+    public class ShellViewModel:ViewModelBase
     {
         private readonly ICalculatorViewModelFactory _calculatorViewModelFactory;
 
@@ -26,6 +28,20 @@ namespace SampleCalculator.Ui.ViewModels
         {
             get => _viewModel;
             set => SetProperty(ref _viewModel, value);
+        }
+
+        public Flyouts Flyouts { get; set; } = new Flyouts();
+
+        public DelegateCommand OpenLeftFlyoutCommand { get; set; }
+
+        public override void RegisterCommands()
+        {
+            OpenLeftFlyoutCommand = new DelegateCommand(OpenLeftFlyoutExecute);
+        }
+
+        private void OpenLeftFlyoutExecute()
+        {
+            Flyouts.LeftIsOpen = true;
         }
     }
 }

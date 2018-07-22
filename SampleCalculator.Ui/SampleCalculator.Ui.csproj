@@ -94,6 +94,7 @@
     </Compile>
     <Compile Include="App_Start\BootStrapper.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Models\Flyouts.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="Views\Shell.xaml.cs">
       <DependentUpon>Shell.xaml</DependentUpon>
