@@ -2,8 +2,15 @@
 
 namespace SampleCalculator.ViewsModule.ViewModels.Bases
 {
-    public class ViewModelBase:BindableBase
+    public abstract class ViewModelBase:BindableBase
     {
-        
+        protected ViewModelBase()
+        {
+            RegisterCollections();
+            RegisterCommands();
+        }
+
+        public virtual void RegisterCollections() { }
+        public virtual void RegisterCommands() { }
     }
 }
