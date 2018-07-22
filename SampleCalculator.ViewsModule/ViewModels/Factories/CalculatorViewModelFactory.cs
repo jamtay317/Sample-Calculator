@@ -25,7 +25,7 @@ namespace SampleCalculator.ViewsModule.ViewModels.Factories
             ICalculatorViewModelBase calculatorViewModel = null;
             if (!_calculatorViewModels.ContainsKey(calculatorName))
             {
-                var type = Assembly.GetExecutingAssembly().GetTypes().SingleOrDefault(x=>x.Name == $"{calculatorName}CalculatorViewModel");
+                var type = Assembly.GetExecutingAssembly().GetTypes().FirstOrDefault(x=>x.Name == $"{calculatorName}CalculatorViewModel");
 
                 if (_containerHelper.Resolve(type) is ICalculatorViewModelBase viewModel)
                 {
