@@ -2,7 +2,10 @@
 {
     public class BasicTokenizer:TokenizerBase
     {
-        public override ITokenizer Sucessor { get; } = null;
+        public override string ExpressionName { get; } = null;
+        public override ITokenizer Sucessor { get; protected set; } = null;
+        protected override bool IsDefault => true;
+
         protected override bool ContainsToken(Expression expression)
         {
             return true;

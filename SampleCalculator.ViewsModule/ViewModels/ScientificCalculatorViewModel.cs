@@ -1,5 +1,8 @@
-﻿using Prism.Commands;
+﻿using System;
+using System.Linq;
+using Prism.Commands;
 using SampleCalculator.Core.Calculators;
+using SampleCalculator.Core.Constants;
 using SampleCalculator.ViewsModule.ViewModels.Bases;
 
 namespace SampleCalculator.ViewsModule.ViewModels
@@ -11,8 +14,8 @@ namespace SampleCalculator.ViewsModule.ViewModels
         }
 
         protected override string NumberFormat => "N4";
-        public override int Height { get; set; } = 500;
-        public override int Width { get; set; } = 500;
+        public override int Height { get; set; } = 550;
+        public override int Width { get; set; } = 550;
 
         public DelegateCommand<string> SymbolButtonPushedCommand { get; set; }
 
@@ -24,7 +27,9 @@ namespace SampleCalculator.ViewsModule.ViewModels
 
         private void SymbolButtonPushedExecute(string symbol)
         {
-            
+            var expression = Expressions.ExpressionNames.First(x=>x.Equals(symbol,StringComparison.CurrentCultureIgnoreCase));
+            Expression.AddExpression(expression);
+            RaisePropertyChanged(nameof(Expression));
         }
     }
 }

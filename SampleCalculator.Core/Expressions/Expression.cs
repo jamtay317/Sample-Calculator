@@ -14,10 +14,19 @@
         public Expression(string value)
         {
             _value = value;
+            ExpressionType = Constants.Expressions.Basic;
         }
 
         private string _value;
         public string Value => _value;
+
+        public string ExpressionType { get; set; }
+
+        public Expression AddExpression(string expressionName)
+        {
+            _value = $"{expressionName}({_value})";
+            return this;
+        }
 
         public override string ToString()
         {

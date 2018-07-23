@@ -1,8 +1,20 @@
-﻿namespace SampleCalculator.Core.Expressions.Tokenizers
+﻿using System;
+
+namespace SampleCalculator.Core.Expressions.Tokenizers
 {
     public abstract class TokenizerBase: ITokenizer
     {
-        public abstract ITokenizer Sucessor { get; }
+        protected TokenizerBase()
+        {
+            if (!IsDefault)
+            {
+                Sucessor = Sucessor ?? new BasicTokenizer();
+            }
+        }
+
+        protected virtual bool IsDefault => false;
+        public abstract string ExpressionName { get; }
+        public abstract ITokenizer Sucessor { get; protected set; }
         public virtual Expression GetToken(Expression expression)
         {
             if (!ContainsToken(expression))
@@ -15,7 +27,12 @@
 
         protected abstract bool ContainsToken(Expression expression);
 
-        protected abstract Expression SplitToken(Expression e);
+        protected virtual Expression SplitToken(Expression e)
+        {
+            var startIndex = e.ToString().IndexOf(ExpressionName, StringComparison.Ordinal) + ExpressionName.Length;
+            var indexes = GetParenthesesIndexs(e, startIndex);
+            return new Expression(e.ToString().Substring(indexes.startIndex, indexes.length));
+        }
 
         protected virtual (int startIndex, int length)  GetParenthesesIndexs(Expression e, int startIndex)
         {

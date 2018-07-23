@@ -75,6 +75,9 @@
     <Compile Include="Constants\ViewModels.cs" />
     <Compile Include="ContainerHelpers\ContainerHelper.cs" />
     <Compile Include="ContainerHelpers\IContainerHelper.cs" />
+    <Compile Include="Expressions\Parsers\IParser.cs" />
+    <Compile Include="Expressions\Parsers\ParserBase.cs" />
+    <Compile Include="Expressions\Parsers\SqrtParser.cs" />
     <Compile Include="Expressions\Tokenizers\BasicTokenizer.cs" />
     <Compile Include="Expressions\Tokenizers\ITokenizer.cs" />
     <Compile Include="Expressions\Tokenizers\SqrtTokenizer.cs" />
@@ -85,8 +88,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Expressions\Parsers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

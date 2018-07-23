@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using Prism.Commands;
-using Prism.Mvvm;
 using SampleCalculator.Core.Constants;
 using SampleCalculator.Ui.Models;
 using SampleCalculator.ViewsModule.ViewModels.Bases;

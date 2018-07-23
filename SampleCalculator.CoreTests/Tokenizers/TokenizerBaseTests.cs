@@ -20,17 +20,13 @@ namespace SampleCalculator.CoreTests.Tokenizers
             
         }
 
+        public override string ExpressionName => SampleCalculator.Core.Constants.Expressions.Sqrt;
         public override ITokenizer Sucessor => _sucessorTokenizer.Object;
         protected override bool ContainsToken(Expression expression)
         {
             return _containsToken;
         }
-
-        protected override Expression SplitToken(Expression e)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         [TestMethod]
         public void GetPerenthesesIndexs_PassValidExpression_ShouldReturnCorrectValues()
         {
@@ -57,6 +53,17 @@ namespace SampleCalculator.CoreTests.Tokenizers
 
             //Assert
             _sucessorTokenizer.Verify(x=>x.GetToken(It.IsAny<Expression>()));
+        }
+
+        [TestMethod]
+        public void SplitToken_BasicExpression_ShouldSplitToken()
+        {
+            
+            //Act
+            var expression = SplitToken(new Expression($"{ExpressionName}(3+3)"));
+
+            //Assert
+            Assert.AreEqual("(3+3)", expression.ToString());
         }
     }
 }

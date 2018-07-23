@@ -2,22 +2,20 @@
 {
     public class SqrtTokenizer:TokenizerBase
     {
-        
-        public override ITokenizer Sucessor { get; } = new BasicTokenizer();
+        public SqrtTokenizer():base(){}
 
-        public Expression GetToken(Expression expression)
+        public SqrtTokenizer(ITokenizer successor):this()
         {
-            throw new System.NotImplementedException();
+            Sucessor = successor;
         }
-
+        public override string ExpressionName => Constants.Expressions.Sqrt;
+        public override ITokenizer Sucessor { get; protected set; }
+        
         protected override bool ContainsToken(Expression expression)
         {
             return expression.ToString().Contains(Constants.Expressions.Sqrt);
         }
 
-        protected override Expression SplitToken(Expression e)
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }
