@@ -89,6 +89,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Bases\CalculatorViewModelBaseTests.cs" />
     <Compile Include="ViewModels\Factories\CalculatorViewModelFactoyTests.cs" />
+    <Compile Include="ViewModels\ScientificCalculatorViewModelTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
