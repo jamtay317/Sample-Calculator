@@ -1,6 +1,8 @@
-﻿namespace SampleCalculator.Core.Expressions
+﻿using System;
+
+namespace SampleCalculator.Core.Expressions
 {
-    public struct Expression
+    public struct Expression:IEquatable<Expression>
     {
        public static implicit operator  Expression (string v)
         {
@@ -21,16 +23,29 @@
         public string Value => _value;
 
         public string ExpressionType { get; set; }
-
-        public Expression AddExpression(string expressionName)
-        {
-            _value = $"{expressionName}({_value})";
-            return this;
-        }
-
+        
         public override string ToString()
         {
             return Value;
+        }
+
+        public bool Equals(Expression other)
+        {
+            return string.Equals(_value, other._value) && string.Equals(ExpressionType, other.ExpressionType);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            return obj is Expression && Equals((Expression) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                return ((_value != null ? _value.GetHashCode() : 0) * 397) ^ (ExpressionType != null ? ExpressionType.GetHashCode() : 0);
+            }
         }
     }
 }

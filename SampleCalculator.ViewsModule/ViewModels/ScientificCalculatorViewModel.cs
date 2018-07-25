@@ -3,6 +3,7 @@ using System.Linq;
 using Prism.Commands;
 using SampleCalculator.Core.Calculators;
 using SampleCalculator.Core.Constants;
+using SampleCalculator.Core.Expressions;
 using SampleCalculator.ViewsModule.ViewModels.Bases;
 
 namespace SampleCalculator.ViewsModule.ViewModels
@@ -28,8 +29,8 @@ namespace SampleCalculator.ViewsModule.ViewModels
         private void SymbolButtonPushedExecute(string symbol)
         {
             var expression = Expressions.ExpressionNames.First(x=>x.Equals(symbol,StringComparison.CurrentCultureIgnoreCase));
-            Expression.AddExpression(expression);
-            RaisePropertyChanged(nameof(Expression));
+            Expression = $"{expression}({Expression})";
         }
+
     }
 }

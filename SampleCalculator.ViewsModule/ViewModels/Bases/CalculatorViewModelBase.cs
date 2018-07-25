@@ -40,7 +40,7 @@ namespace SampleCalculator.ViewsModule.ViewModels.Bases
             EqualsCommand = new DelegateCommand(EqualsExecute);
         }
 
-        private void EqualsExecute()
+        protected virtual void EqualsExecute()
         {
             var expressionValue = Calculator.Evaluate(Expression);
             Expression = expressionValue.ToString(NumberFormat);

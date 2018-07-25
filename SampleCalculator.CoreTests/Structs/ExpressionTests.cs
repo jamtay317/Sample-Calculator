@@ -45,5 +45,29 @@ namespace SampleCalculator.CoreTests.Structs
             //Assert
             Assert.AreEqual("A+B", _expression.Value);
         }
+
+        [TestMethod]
+        public void Equals_PassSameValueIn_ShouldEqualTrue()
+        {
+            //Arrange
+            var e1 = new Expression("3+3");
+            var e2 = new Expression("3+3");
+            
+
+            //Assert
+            Assert.IsTrue(e1.Equals(e2));
+        }
+
+        [TestMethod]
+        public void Equals_PassDifferentValueIn_ShouldEqualFalse()
+        {
+            //Arrange
+            var e1 = new Expression("3+3");
+            var e2 = new Expression("3+4");
+
+
+            //Assert
+            Assert.IsFalse(e1.Equals(e2));
+        }
     }
 }

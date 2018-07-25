@@ -71,17 +71,15 @@
     <Compile Include="Calculators\BasicCalculator.cs" />
     <Compile Include="Calculators\ICalculator.cs" />
     <Compile Include="Calculators\ScientificCalculator.cs" />
+    <Compile Include="Calculators\SqrtCalculator.cs" />
     <Compile Include="Constants\Expressions.cs" />
     <Compile Include="Constants\ViewModels.cs" />
     <Compile Include="ContainerHelpers\ContainerHelper.cs" />
     <Compile Include="ContainerHelpers\IContainerHelper.cs" />
-    <Compile Include="Expressions\Parsers\IParser.cs" />
-    <Compile Include="Expressions\Parsers\ParserBase.cs" />
-    <Compile Include="Expressions\Parsers\SqrtParser.cs" />
-    <Compile Include="Expressions\Tokenizers\BasicTokenizer.cs" />
-    <Compile Include="Expressions\Tokenizers\ITokenizer.cs" />
-    <Compile Include="Expressions\Tokenizers\SqrtTokenizer.cs" />
-    <Compile Include="Expressions\Tokenizers\TokenizerBase.cs" />
+    <Compile Include="Expressions\Solvers\AllSolvers.cs" />
+    <Compile Include="Expressions\Solvers\BasicSolver.cs" />
+    <Compile Include="Expressions\Solvers\ISolver.cs" />
+    <Compile Include="Expressions\Solvers\SqrtSolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Expressions\Expression.cs" />
   </ItemGroup>
