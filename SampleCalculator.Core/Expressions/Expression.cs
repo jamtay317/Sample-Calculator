@@ -16,7 +16,9 @@ namespace SampleCalculator.Core.Expressions
         }
         public static Expression operator  +(Expression e, string v)
         {
-            return new Expression(){_value = $"{e}{v}"};
+            var newExpression = new Expression(){_value = $"{e}{v}"};
+            newExpression.ExpressionType = GetExpressionType(newExpression);
+            return newExpression;
         }
 
         public Expression(string value)
