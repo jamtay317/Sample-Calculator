@@ -13,6 +13,7 @@
         public static string Basic => "Basic";
         public static string Exponent => "Exp";
         public static string Squared => "Squared";
+        public static string ScientificNotation => "ScientificNotation";
         
     }
 }
