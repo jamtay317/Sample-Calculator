@@ -26,7 +26,7 @@ namespace SampleCalculator.ViewsModuleTests.ViewModels.Bases
             _calculatorViewModel.ButtonPushedCommand.Execute("b");
 
             //Assert
-            Assert.AreEqual("ab", _calculatorViewModel.Expression);
+            Assert.AreEqual("ab", _calculatorViewModel.Expression.ToString());
         }
 
         [TestMethod]
@@ -58,7 +58,7 @@ namespace SampleCalculator.ViewsModuleTests.ViewModels.Bases
             _calculatorViewModel.ButtonPushedCommand.Execute("5");
 
             //Assert
-            Assert.AreEqual("55", _calculatorViewModel.Expression);
+            Assert.AreEqual("55", _calculatorViewModel.Expression.ToString());
         }
     }
 

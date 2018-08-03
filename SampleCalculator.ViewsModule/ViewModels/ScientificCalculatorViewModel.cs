@@ -4,14 +4,18 @@ using Prism.Commands;
 using SampleCalculator.Core.Calculators;
 using SampleCalculator.Core.Constants;
 using SampleCalculator.Core.Expressions;
+using SampleCalculator.Core.Expressions.Factory;
 using SampleCalculator.ViewsModule.ViewModels.Bases;
 
 namespace SampleCalculator.ViewsModule.ViewModels
 {
     public class ScientificCalculatorViewModel:CalculatorViewModelBase
     {
-        public ScientificCalculatorViewModel() : base(new ScientificCalculator())
+        private readonly IExpressionBuilderFactory _expressionBuilderFactory;
+
+        public ScientificCalculatorViewModel(IExpressionBuilderFactory expressionBuilderFactory) : base(new ScientificCalculator())
         {
+            _expressionBuilderFactory = expressionBuilderFactory;
         }
 
         protected override string NumberFormat => "N4";
@@ -28,8 +32,8 @@ namespace SampleCalculator.ViewsModule.ViewModels
 
         private void SymbolButtonPushedExecute(string symbol)
         {
-            var expression = Expressions.ExpressionNames.First(x=>x.Equals(symbol,StringComparison.CurrentCultureIgnoreCase));
-            Expression = $"{expression}({Expression})";
+            var expressionBuilder = _expressionBuilderFactory.GetBuilder(symbol);
+            Expression = expressionBuilder.Build(Expression,symbol);
         }
 
     }

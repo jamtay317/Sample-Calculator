@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SampleCalculator.Core.Calculators;
+using SampleCalculator.Core.Constants;
 using SampleCalculator.Core.Expressions;
 
 namespace SampleCalculator.CoreTests.Calculators

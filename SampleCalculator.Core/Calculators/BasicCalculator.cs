@@ -6,6 +6,7 @@ namespace SampleCalculator.Core.Calculators
 {
     public class BasicCalculator:ICalculator
     {
+        
         public virtual double Evaluate(Expression expression)
         {
             var dataTable = new DataTable();

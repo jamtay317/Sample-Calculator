@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace SampleCalculator.Core.Expressions
 {
@@ -6,7 +7,12 @@ namespace SampleCalculator.Core.Expressions
     {
        public static implicit operator  Expression (string v)
         {
-            return new Expression(){_value = v};
+            //assume that expression looks like expressionType(value to evaluate)
+            var expression = new Expression(){_value = v};
+
+            expression.ExpressionType = GetExpressionType(expression);
+
+            return expression;
         }
         public static Expression operator  +(Expression e, string v)
         {
@@ -18,6 +24,23 @@ namespace SampleCalculator.Core.Expressions
             _value = value;
             ExpressionType = Constants.Expressions.Basic;
         }
+
+        private static string GetExpressionType(Expression expression)
+        {
+            if(expression.Value == null) throw  new NullReferenceException();
+            var firstPernIndex = expression.Value.IndexOf("(",StringComparison.CurrentCulture);
+
+            var expressionType = (firstPernIndex>0)? 
+                expression.Value.Substring(0, firstPernIndex): 
+                Constants.Expressions.Basic;
+
+            var actualExpressionType = Constants.Expressions.ExpressionNames.FirstOrDefault(x => x == expressionType);
+
+            if (string.IsNullOrWhiteSpace(actualExpressionType)) throw new NotImplementedException();
+
+            return actualExpressionType;
+        }
+
 
         private string _value;
         public string Value => _value;
