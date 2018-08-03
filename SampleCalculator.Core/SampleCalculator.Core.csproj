@@ -80,6 +80,7 @@
     <Compile Include="Expressions\Builder\BasicExpressionBuilder.cs" />
     <Compile Include="Expressions\Builder\ExpExpressionBuilder.cs" />
     <Compile Include="Expressions\Builder\IExpressionBuilder.cs" />
+    <Compile Include="Expressions\Builder\SquaredExpressionBuilder.cs" />
     <Compile Include="Expressions\Factory\ExpressionBuilderFactory.cs" />
     <Compile Include="Expressions\Factory\IExpressionBuilderFactory.cs" />
     <Compile Include="Expressions\Solvers\AllSolvers.cs" />
