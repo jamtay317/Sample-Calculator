@@ -27,6 +27,7 @@ namespace SampleCalculator.ViewsModule.ViewModels.Bases
 
         public DelegateCommand<string> ButtonPushedCommand { get; set; }
         public DelegateCommand EqualsCommand { get; set; }
+        public DelegateCommand ClearCommand { get; set; }
 
         protected abstract string NumberFormat { get; }
         public abstract int Height { get; set; }
@@ -38,6 +39,12 @@ namespace SampleCalculator.ViewsModule.ViewModels.Bases
         {
             ButtonPushedCommand = new DelegateCommand<string>(ButtonPushedExecute);
             EqualsCommand = new DelegateCommand(EqualsExecute);
+            ClearCommand = new DelegateCommand(ClearExpression);
+        }
+
+        private void ClearExpression()
+        {
+            Expression = null;
         }
 
         protected virtual void EqualsExecute()

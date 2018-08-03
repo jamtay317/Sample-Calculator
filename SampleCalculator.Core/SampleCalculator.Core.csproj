@@ -72,6 +72,7 @@
     <Compile Include="Calculators\ExponentCalculator.cs" />
     <Compile Include="Calculators\ICalculator.cs" />
     <Compile Include="Calculators\ScientificCalculator.cs" />
+    <Compile Include="Calculators\SinCalculator.cs" />
     <Compile Include="Calculators\SqrtCalculator.cs" />
     <Compile Include="Constants\Expressions.cs" />
     <Compile Include="Constants\ViewModels.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Expressions\Builder\ExpExpressionBuilder.cs" />
     <Compile Include="Expressions\Builder\IExpressionBuilder.cs" />
     <Compile Include="Expressions\Builder\ScientificNotationExpressionBuilder.cs" />
+    <Compile Include="Expressions\Builder\SinExpressionBuilder.cs" />
     <Compile Include="Expressions\Builder\SquaredExpressionBuilder.cs" />
     <Compile Include="Expressions\Factory\ExpressionBuilderFactory.cs" />
     <Compile Include="Expressions\Factory\IExpressionBuilderFactory.cs" />
@@ -88,6 +90,7 @@
     <Compile Include="Expressions\Solvers\BasicSolver.cs" />
     <Compile Include="Expressions\Solvers\ExpSolver.cs" />
     <Compile Include="Expressions\Solvers\ISolver.cs" />
+    <Compile Include="Expressions\Solvers\SinSolver.cs" />
     <Compile Include="Expressions\Solvers\SqrtSolver.cs" />
     <Compile Include="ExtensionMethods\ExpressionExtentionMethods.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
