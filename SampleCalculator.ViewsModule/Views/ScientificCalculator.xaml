@@ -29,7 +29,8 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <Button Style="{StaticResource KeyPadSymbol}" Grid.Row="0" Grid.Column="0" >
+            <Button Style="{StaticResource KeyPadSymbol}" Grid.Row="0" Grid.Column="0" 
+                    Command="{Binding SymbolButtonPushedCommand}" CommandParameter="{x:Static constants:Expressions.Exponent}" >
                 <Button.Content>
                     <TextBlock>
                         <Run>X</Run>

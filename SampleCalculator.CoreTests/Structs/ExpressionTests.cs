@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SampleCalculator.Core.Constants;
 using SampleCalculator.Core.Expressions;
 
 namespace SampleCalculator.CoreTests.Structs
@@ -68,6 +69,16 @@ namespace SampleCalculator.CoreTests.Structs
 
             //Assert
             Assert.IsFalse(e1.Equals(e2));
+        }
+
+        [TestMethod]
+        public void Create_NonBasicExpression_ShouldKnowExpressionType()
+        {
+            //Arrange
+            Expression expresssion = "Sqrt(9)";
+            
+            //Assert
+            Assert.AreEqual(Expressions.Sqrt, expresssion.ExpressionType);
         }
     }
 }
