@@ -52,7 +52,9 @@
             <Button Style="{StaticResource KeyPadSymbol}" Grid.Row="0" Grid.Column="4" Content="tan"></Button>
 
             <Button Command="{Binding SymbolButtonPushedCommand}" CommandParameter="{x:Static constants:Expressions.Sqrt}" Grid.Row="1" Grid.Column="0" Content="√"></Button>
-            <Button Style="{StaticResource KeyPadSymbol}" Grid.Row="1" Grid.Column="1" >
+            <Button Style="{StaticResource KeyPadSymbol}" Grid.Row="1" Grid.Column="1" 
+                    Command="{Binding SymbolButtonPushedCommand}" CommandParameter="{x:Static constants:Expressions.ScientificNotation}">
+
                 <Button.Content>
                     <TextBlock>
                         <Run>10</Run>
