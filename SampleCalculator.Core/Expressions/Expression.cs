@@ -10,6 +10,8 @@ namespace SampleCalculator.Core.Expressions
             //assume that expression looks like expressionType(value to evaluate)
             var expression = new Expression(){_value = v};
 
+            if (expression.Value == null) return expression;
+
             expression.ExpressionType = GetExpressionType(expression);
 
             return expression;

@@ -47,9 +47,10 @@
                     </TextBlock>
                 </Button.Content>
             </Button>
-            <Button Style="{StaticResource KeyPadSymbol}" Grid.Row="0" Grid.Column="2" Content="sin"></Button>
-            <Button Style="{StaticResource KeyPadSymbol}" Grid.Row="0" Grid.Column="3" Content="cos"></Button>
-            <Button Style="{StaticResource KeyPadSymbol}" Grid.Row="0" Grid.Column="4" Content="tan"></Button>
+            <Button Style="{StaticResource KeyPadSymbol}" Grid.Row="0" Grid.Column="2" Content="Sin"
+                    Command="{Binding SymbolButtonPushedCommand}" CommandParameter="{x:Static constants:Expressions.Sin}"></Button>
+            <Button Style="{StaticResource KeyPadSymbol}" Grid.Row="0" Grid.Column="3" Content="Cos"></Button>
+            <Button Style="{StaticResource KeyPadSymbol}" Grid.Row="0" Grid.Column="4" Content="Tan"></Button>
 
             <Button Command="{Binding SymbolButtonPushedCommand}" CommandParameter="{x:Static constants:Expressions.Sqrt}" Grid.Row="1" Grid.Column="0" Content="√"></Button>
             <Button Style="{StaticResource KeyPadSymbol}" Grid.Row="1" Grid.Column="1" 
@@ -67,8 +68,8 @@
             <Button Style="{StaticResource KeyPadSymbol}" Grid.Row="1" Grid.Column="4" Content="Mod"></Button>
 
             <Button Grid.Row="2" Grid.Column="0" Content=""></Button>
-            <Button Style="{StaticResource KeyPad}" Grid.Row="2" Grid.Column="1" Content="CE"></Button>
-            <Button Style="{StaticResource KeyPad}" Grid.Row="2" Grid.Column="2" Content="C"></Button>
+            <Button Style="{StaticResource KeyPad}" Grid.Row="2" Grid.Column="1" Content="CE" Command="{Binding ClearCommand}"></Button>
+            <Button Style="{StaticResource KeyPad}" Grid.Row="2" Grid.Column="2" Content="C" Command="{Binding ClearCommand}"></Button>
             <Button Grid.Row="2" Grid.Column="3" fa:Awesome.Content="Remove" TextElement.FontFamily="pack://application:,,,/FontAwesome.WPF;component/#FontAwesome"></Button>
             <Button Style="{StaticResource KeyPad}" Grid.Row="2" Grid.Column="4" Content="/"></Button>
 

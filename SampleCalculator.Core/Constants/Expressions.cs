@@ -6,8 +6,8 @@
         public static readonly string[] ExpressionNames = new[] {Exponent, Sqrt , Sin, Cos, Pow, Log, Basic};
 
         public static string Sqrt => "Sqrt";
-        public static string Sin => "sin";
-        public static string Cos => "cos";
+        public static string Sin => "Sin";
+        public static string Cos => "Cos";
         public static string Pow => "Pow";
         public static string Log => "Log";
         public static string Basic => "Basic";
